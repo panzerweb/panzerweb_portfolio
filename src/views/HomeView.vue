@@ -114,7 +114,7 @@ const setTab = (tab: string) => {
           </div>
 
           <div v-else-if="activeTab === 'experience'">
-            <p class="text-gray-400">Gina code pa nako po ang experience</p>
+            <p class="text-gray-400">Gina code pa nako po ang experiences hehe</p>
           </div>
         </div>
       </div>
