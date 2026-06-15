@@ -15,9 +15,9 @@ const setTab = (tab: string) => {
 
 <template>
   <section class="container mx-auto">
-    <div class="grid grid-cols-[400px_1fr] gap-10 items-start">
+    <div class="grid grid-cols-1 lg:grid-cols-[400px_1fr]">
       <!-- LEFT SIDE (sticky group) -->
-      <div class="sticky top-0 h-screen flex flex-col">
+      <div class="flex flex-col lg:sticky lg:top-0 lg:h-screen">
         <!-- NAVBAR INSIDE LEFT COLUMN -->
         <header class="px-6 py-6 w-full">
           <nav class="flex justify-between items-center">
@@ -51,7 +51,7 @@ const setTab = (tab: string) => {
       </div>
 
       <!-- RIGHT SIDE -->
-      <div class="py-10">
+      <div class="py-10 px-4">
         <!-- Tabs -->
         <div class="flex gap-4 border-b pb-2">
           <button
