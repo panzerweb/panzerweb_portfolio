@@ -5,6 +5,7 @@ import Logo from '@/assets/My_logo.png'
 import { ref } from 'vue'
 import TechStackSection from '@/components/TechStackSection.vue'
 import ProjectSection from '@/components/ProjectSection.vue'
+import ExperiencesSection from '@/components/ExperiencesSection.vue'
 
 const activeTab = ref('about')
 
@@ -114,7 +115,9 @@ const setTab = (tab: string) => {
           </div>
 
           <div v-else-if="activeTab === 'experience'">
-            <p class="text-gray-400">Gina code pa nako po ang experiences hehe</p>
+            <p class="text-gray-400">
+              <ExperiencesSection />
+            </p>
           </div>
         </div>
       </div>

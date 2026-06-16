@@ -10,6 +10,13 @@ export enum ProjectType {
   main,
   side,
 }
+
+export enum WorkType {
+  hybrid,
+  onsite,
+  remote,
+}
+
 // Interfaces
 export interface UserProfile {
   name: string
@@ -41,4 +48,15 @@ export interface Projects {
   isDeployed: boolean
   category: ProjectType
   publishedAt: string
+}
+
+export interface Experiences {
+  title: string
+  location: string
+  dateRange: string
+  country: string
+  region: string
+  province: string
+  type: WorkType
+  description: string
 }

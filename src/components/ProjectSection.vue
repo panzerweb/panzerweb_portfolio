@@ -39,8 +39,8 @@ const getCategoryData = (type: ProjectType) => {
         class="border border-gray-800 rounded-xl overflow-hidden bg-gray-900/40"
       >
         <!-- Cover Image Placeholder -->
-        <div class="h-40 bg-gray-800 flex items-center justify-center">
-          <span class="text-gray-500 text-sm"> No Image Available </span>
+        <div class="aspect-video overflow-hidden rounded-t-xl bg-gray-800">
+          <img :src="project.coverFile" :alt="project.name" class="w-full h-full object-cover" />
         </div>
 
         <!-- Content -->
