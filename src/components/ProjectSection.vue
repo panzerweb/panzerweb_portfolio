@@ -1,25 +1,12 @@
 <script setup lang="ts">
-import { currentProjects } from '@/data/projectsData'
-import { ProjectType } from '@/types/types'
+import { ref } from 'vue'
+import MainProjects from './projects/MainProjects.vue'
+import SideProjects from './projects/SideProjects.vue'
 
-const getCategoryData = (type: ProjectType) => {
-  switch (type) {
-    case ProjectType.main:
-      return {
-        class: 'text-cyan-400 border-cyan-400',
-        text: 'Main',
-      }
-    case ProjectType.side:
-      return {
-        class: 'text-purple-400 border-purple-400',
-        text: 'Side',
-      }
-    default:
-      return {
-        class: 'text-gray-400 border-gray-400',
-        text: 'Default',
-      }
-  }
+const activeTab = ref('main')
+
+const setTab = (tab: string) => {
+  activeTab.value = tab
 }
 </script>
 
@@ -31,72 +18,38 @@ const getCategoryData = (type: ProjectType) => {
       <p class="text-sm text-gray-500 mt-1">Things I’ve built and worked on</p>
     </div>
 
-    <!-- Projects Grid -->
-    <div class="grid gap-6">
-      <article
-        v-for="project in currentProjects"
-        :key="project.id"
-        class="border border-gray-800 rounded-xl overflow-hidden bg-gray-900/40"
+    <div class="flex gap-2 w-full justify-center">
+      <button
+        @click="setTab('main')"
+        class="w-full rounded-xl shadow text-gray-200 cursor-pointer"
+        :class="
+          activeTab === 'main'
+            ? 'bg-cyan-800 p-4 text-md font-semibold'
+            : 'bg-gray-600 p-4 text-md font-semibold'
+        "
       >
-        <!-- Cover Image Placeholder -->
-        <div class="aspect-video overflow-hidden rounded-t-xl bg-gray-800">
-          <img :src="project.coverFile" :alt="project.name" class="w-full h-full object-cover" />
-        </div>
+        Main
+      </button>
+      <button
+        @click="setTab('side')"
+        class="w-full rounded-xl shadow text-gray-200 cursor-pointer"
+        :class="
+          activeTab === 'side'
+            ? 'bg-cyan-800 p-4 text-md font-semibold'
+            : 'bg-gray-600 p-4 text-md font-semibold'
+        "
+      >
+        Side
+      </button>
+    </div>
 
-        <!-- Content -->
-        <div class="p-5 space-y-3">
-          <!-- Title + Category -->
-          <div class="flex justify-between items-start gap-3">
-            <h3 class="text-lg text-gray-200 font-semibold">
-              {{ project.name }}
-            </h3>
+    <!-- Projects Grid -->
+    <div v-if="activeTab == 'main'">
+      <MainProjects />
+    </div>
 
-            <span
-              class="text-xs px-2 py-1 rounded-full border"
-              :class="getCategoryData(project.category).class"
-            >
-              {{ getCategoryData(project.category).text }}
-            </span>
-          </div>
-
-          <!-- Description -->
-          <p class="text-sm text-gray-400 leading-relaxed">
-            {{ project.description }}
-          </p>
-
-          <!-- Tech Stack -->
-          <div class="flex flex-wrap gap-2">
-            <span
-              v-for="tech in project.techstack"
-              :key="tech.id"
-              class="text-xs px-2 py-1 bg-gray-800 text-gray-300 rounded-full"
-            >
-              {{ tech.name }}
-            </span>
-          </div>
-
-          <!-- Links -->
-          <div class="flex gap-3 pt-2">
-            <a
-              v-if="project.githubRepo"
-              :href="project.githubRepo"
-              target="_blank"
-              class="text-sm text-gray-300 hover:text-white underline"
-            >
-              GitHub
-            </a>
-
-            <span v-if="project.isDeployed" class="text-sm text-green-400"> Live ✓ </span>
-
-            <span v-else class="text-sm text-gray-500"> Not Deployed </span>
-          </div>
-
-          <!-- Year -->
-          <p class="text-xs text-gray-500">
-            {{ project.publishedAt }}
-          </p>
-        </div>
-      </article>
+    <div v-else-if="activeTab == 'side'">
+      <SideProjects />
     </div>
   </section>
 </template>

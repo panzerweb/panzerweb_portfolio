@@ -9,9 +9,59 @@ import ExperiencesSection from '@/components/ExperiencesSection.vue'
 
 const activeTab = ref('about')
 
-const setTab = (tab: string) => {
-  activeTab.value = tab
+const setTab = (tabId: string) => {
+  const targetTab = mainTabs.find((tab) => tab.tabId === tabId)
+
+  if (!targetTab) {
+    console.error(`Tab ${tabId} is not found`)
+  }
+
+  activeTab.value = tabId
 }
+
+interface TabItem {
+  id: number
+  tabId: string
+  name: string
+}
+
+const mainTabs: TabItem[] = [
+  {
+    id: 0,
+    tabId: 'about',
+    name: 'About',
+  },
+  {
+    id: 1,
+    tabId: 'tech',
+    name: 'Tech Stack',
+  },
+  {
+    id: 2,
+    tabId: 'coding',
+    name: 'Coding Project',
+  },
+  {
+    id: 3,
+    tabId: 'experiences',
+    name: 'Experiences',
+  },
+  {
+    id: 4,
+    tabId: 'non-coding',
+    name: 'Other Projects',
+  },
+  {
+    id: 5,
+    tabId: 'achievements',
+    name: 'Achievements',
+  },
+  {
+    id: 5,
+    tabId: 'future_projects',
+    name: 'Future Projects',
+  },
+]
 </script>
 
 <template>
@@ -53,51 +103,67 @@ const setTab = (tab: string) => {
 
       <!-- RIGHT SIDE -->
       <div class="py-10 px-4">
+        <!-- DROPDOWN VERSION IF SMALLER DEVICE -->
+        <div class="lg:hidden">
+          <label
+            for="projects"
+            class="block text-cyan-400 font-semibold text-sm tracking-wide mb-2"
+          >
+            Select Section
+          </label>
+
+          <div class="relative">
+            <select
+              v-model="activeTab"
+              name="projects"
+              id="projects"
+              class="w-full appearance-none bg-gray-900 text-cyan-300 font-semibold px-4 py-3 pr-10 border border-gray-700 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition"
+            >
+              <option
+                v-for="tab in mainTabs"
+                :key="tab.id"
+                :value="tab.tabId"
+                class="bg-gray-900 text-white"
+              >
+                {{ tab.name }}
+              </option>
+            </select>
+
+            <!-- Custom dropdown arrow -->
+            <div
+              class="pointer-events-none absolute inset-y-0 right-3 flex items-center text-cyan-400"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
         <!-- Tabs -->
-        <div class="flex gap-4 border-b pb-2">
-          <button
-            @click="setTab('about')"
-            :class="
-              activeTab === 'about'
-                ? 'font-bold border-b-2 border-cyan-400 text-cyan-400'
-                : 'text-gray-400'
-            "
-          >
-            About
-          </button>
-
-          <button
-            @click="setTab('tech')"
-            :class="
-              activeTab === 'tech'
-                ? 'font-bold border-b-2 border-cyan-400 text-cyan-400'
-                : 'text-gray-400'
-            "
-          >
-            Tech Stack
-          </button>
-
-          <button
-            @click="setTab('projects')"
-            :class="
-              activeTab === 'projects'
-                ? 'font-bold border-b-2 border-cyan-400 text-cyan-400'
-                : 'text-gray-400'
-            "
-          >
-            Projects
-          </button>
-
-          <button
-            @click="setTab('experience')"
-            :class="
-              activeTab === 'experience'
-                ? 'font-bold border-b-2 border-cyan-400 text-cyan-400'
-                : 'text-gray-400'
-            "
-          >
-            Experiences
-          </button>
+        <div class="hidden lg:flex gap-4 border-b pb-2">
+          <div v-for="tab in mainTabs" :key="tab.id">
+            <button
+              @click="setTab(tab.tabId)"
+              :class="
+                activeTab === tab.tabId
+                  ? 'font-bold border-b-2 border-cyan-400 text-cyan-400'
+                  : 'text-gray-400'
+              "
+            >
+              {{ tab.name }}
+            </button>
+          </div>
         </div>
 
         <!-- Content -->
@@ -110,14 +176,23 @@ const setTab = (tab: string) => {
             <TechStackSection />
           </div>
 
-          <div v-else-if="activeTab === 'projects'">
+          <div v-else-if="activeTab === 'coding'">
             <ProjectSection />
           </div>
 
-          <div v-else-if="activeTab === 'experience'">
+          <div v-else-if="activeTab === 'experiences'">
             <p class="text-gray-400">
               <ExperiencesSection />
             </p>
+          </div>
+          <div v-else-if="activeTab === 'non-coding'">
+            <p class="text-gray-400">Non Coding Section in development</p>
+          </div>
+          <div v-else-if="activeTab === 'achievements'">
+            <p class="text-gray-400">Achievements Section in development</p>
+          </div>
+          <div v-else-if="activeTab === 'future_projects'">
+            <p class="text-gray-400">Future Projects Section in development</p>
           </div>
         </div>
       </div>

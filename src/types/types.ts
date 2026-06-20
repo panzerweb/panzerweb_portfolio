@@ -17,7 +17,22 @@ export enum WorkType {
   remote,
 }
 
+export enum OtherProjectType {
+  art,
+  music,
+  academic,
+}
+
+export enum AchievementType {
+  certificate,
+  plaque,
+  event,
+  award,
+}
+
 // Interfaces
+
+// UserProfile Interface
 export interface UserProfile {
   name: string
   ign: string
@@ -32,12 +47,14 @@ export interface UserProfile {
   barangay: string
 }
 
+// Coding Project Tech Stack Interface
 export interface TechStacks {
-  id: number
+  id?: number
   name: string
-  category: TechCategory
+  category?: TechCategory
 }
 
+// Coding Projects Interface
 export interface Projects {
   id: number
   name: string
@@ -50,6 +67,7 @@ export interface Projects {
   publishedAt: string
 }
 
+// Experience Interface
 export interface Experiences {
   title: string
   location: string
@@ -59,4 +77,29 @@ export interface Experiences {
   province: string
   type: WorkType
   description: string
+}
+
+// Other Projects Interface
+export interface OtherProjects {
+  id: number
+  name: string
+  coverFile: string
+  description: string
+  techstack?: string[]
+  url?: string
+  category: OtherProjectType
+  publishedAt: string
+}
+
+// Achievements Interface
+export interface Achievement {
+  id: number
+  name: string
+  images: string[]
+  description: string
+  receivedAt: string
+  achievementType: AchievementType
+  location?: string
+  issuer?: string
+  link?: string
 }

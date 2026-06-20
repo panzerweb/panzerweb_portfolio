@@ -53,6 +53,7 @@ export const currentProjects: Projects[] = [
       'A seamless RFID scanning integration for an attendance management system that allows student government to easily manage and track attendance of students in every event.',
     techstack: [
       findTechStack('Laravel'),
+      { name: 'Blade' },
       findTechStack('Php'),
       findTechStack('JavaScript'),
       findTechStack('Vite'),
@@ -88,7 +89,12 @@ export const currentProjects: Projects[] = [
     coverFile: PyTodo,
     description:
       'A simple, and efficient rule-based voice command CLI todo application that runs on every device startup to headstart your day and be productive. Simply command the program, and manage your tasks.',
-    techstack: [findTechStack('Python'), findTechStack('SQLite')],
+    techstack: [
+      findTechStack('Python'),
+      findTechStack('SQLite'),
+      { name: 'SpeechRecognition' },
+      { name: 'Google Web Speech API' },
+    ],
     githubRepo: 'https://github.com/panzerweb/pytodo',
     isDeployed: true,
     category: ProjectType.side,
