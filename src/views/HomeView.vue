@@ -6,6 +6,8 @@ import { ref } from 'vue'
 import TechStackSection from '@/components/TechStackSection.vue'
 import ProjectSection from '@/components/ProjectSection.vue'
 import ExperiencesSection from '@/components/ExperiencesSection.vue'
+import AchievementsSection from '@/components/AchievementsSection.vue'
+import OtherProjectsSection from '@/components/OtherProjectsSection.vue'
 
 const activeTab = ref('about')
 
@@ -55,11 +57,6 @@ const mainTabs: TabItem[] = [
     id: 5,
     tabId: 'achievements',
     name: 'Achievements',
-  },
-  {
-    id: 5,
-    tabId: 'future_projects',
-    name: 'Future Projects',
   },
 ]
 </script>
@@ -155,6 +152,7 @@ const mainTabs: TabItem[] = [
           <div v-for="tab in mainTabs" :key="tab.id">
             <button
               @click="setTab(tab.tabId)"
+              class="cursor-pointer"
               :class="
                 activeTab === tab.tabId
                   ? 'font-bold border-b-2 border-cyan-400 text-cyan-400'
@@ -181,18 +179,13 @@ const mainTabs: TabItem[] = [
           </div>
 
           <div v-else-if="activeTab === 'experiences'">
-            <p class="text-gray-400">
-              <ExperiencesSection />
-            </p>
+            <ExperiencesSection />
           </div>
           <div v-else-if="activeTab === 'non-coding'">
-            <p class="text-gray-400">Non Coding Section in development</p>
+            <OtherProjectsSection />
           </div>
           <div v-else-if="activeTab === 'achievements'">
-            <p class="text-gray-400">Achievements Section in development</p>
-          </div>
-          <div v-else-if="activeTab === 'future_projects'">
-            <p class="text-gray-400">Future Projects Section in development</p>
+            <AchievementsSection />
           </div>
         </div>
       </div>

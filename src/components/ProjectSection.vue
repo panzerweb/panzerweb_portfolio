@@ -14,7 +14,7 @@ const setTab = (tab: string) => {
   <section class="space-y-8">
     <!-- Header -->
     <div>
-      <h2 class="text-2xl font-bold text-cyan-400">Projects</h2>
+      <h2 class="text-3xl md:text-4xl font-bold text-cyan-400">Projects</h2>
       <p class="text-sm text-gray-500 mt-1">Things I’ve built and worked on</p>
     </div>
 

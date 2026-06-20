@@ -18,14 +18,14 @@ export enum WorkType {
 }
 
 export enum OtherProjectType {
-  art,
-  music,
   academic,
+  media,
+  creative,
+  research,
 }
 
 export enum AchievementType {
   certificate,
-  plaque,
   event,
   award,
 }
@@ -83,11 +83,11 @@ export interface Experiences {
 export interface OtherProjects {
   id: number
   name: string
-  coverFile: string
+  imageUrl: string
   description: string
   techstack?: string[]
   url?: string
-  category: OtherProjectType
+  category: OtherProjectType[]
   publishedAt: string
 }
 
@@ -97,8 +97,9 @@ export interface Achievement {
   name: string
   images: string[]
   description: string
-  receivedAt: string
+  date: string
   achievementType: AchievementType
+  tags: string[]
   location?: string
   issuer?: string
   link?: string

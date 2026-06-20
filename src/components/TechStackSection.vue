@@ -24,7 +24,7 @@ const ml = computed(() =>
   <section class="space-y-10">
     <!-- Header -->
     <div>
-      <h2 class="text-2xl font-bold text-cyan-400">Tech Stack</h2>
+      <h2 class="text-3xl md:text-4xl font-bold text-cyan-400">Tech Stack</h2>
       <p class="text-sm text-gray-500 mt-1">Technologies I use to build apps and systems</p>
     </div>
 

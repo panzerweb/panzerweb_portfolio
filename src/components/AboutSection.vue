@@ -6,7 +6,7 @@ import { userProfileData } from '@/data/userProfileData'
   <section class="space-y-6">
     <!-- Header -->
     <div>
-      <h2 class="text-2xl text-cyan-400 font-bold">About Me</h2>
+      <h2 class="text-3xl md:text-4xl text-cyan-400 font-bold">About Me</h2>
       <p class="text-sm text-gray-400 mt-1">Developer • Designer • Student</p>
     </div>
 
