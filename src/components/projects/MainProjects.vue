@@ -43,7 +43,7 @@ const mainProjects = currentProjects.filter((project) => project.category == Pro
         <div class="flex flex-wrap gap-2">
           <span
             v-for="tech in project.techstack"
-            :key="tech.id"
+            :key="tech.name"
             class="text-xs px-2 py-1 bg-gray-800 text-gray-300 rounded-full"
           >
             {{ tech.name }}

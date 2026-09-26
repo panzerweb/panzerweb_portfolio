@@ -33,12 +33,6 @@ export const currentProjects: Projects[] = [
       findTechStack('Python'),
       findTechStack('PostgreSQL'),
       findTechStack('Supabase'),
-      findTechStack('Google Colab'),
-      findTechStack('Scikit Learn'),
-      findTechStack('Python Pandas'),
-      findTechStack('Python NumPy'),
-      findTechStack('Seaborn'),
-      findTechStack('Matplotlib'),
     ],
     githubRepo: 'https://github.com/panzerweb/bale_commerce_frontend',
     isDeployed: false,
@@ -73,7 +67,9 @@ export const currentProjects: Projects[] = [
       'A web application for students to seamlessly rent a locker within school grounds. Developed for remote monitoring of available lockers, and current active subscriptions of a student.',
     techstack: [
       findTechStack('Flutter'),
-      findTechStack('Django'),
+      {
+        name: 'Django',
+      },
       findTechStack('Dart'),
       findTechStack('Python'),
       findTechStack('MySQL'),

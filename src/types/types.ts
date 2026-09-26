@@ -45,11 +45,12 @@ export interface UserProfile {
   province: string
   city: string
   barangay: string
+  contactNumber: string
+  email: string
 }
 
 // Coding Project Tech Stack Interface
 export interface TechStacks {
-  id?: number
   name: string
   category?: TechCategory
 }
