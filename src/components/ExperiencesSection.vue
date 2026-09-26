@@ -86,9 +86,11 @@ const getWorkTypeData = (type: WorkType) => {
           </p>
 
           <!-- Description -->
-          <p class="text-sm text-gray-400 leading-relaxed">
-            {{ experience.description }}
-          </p>
+          <ul class="mx-5" v-for="content in experience.description" :key="content">
+            <li class="text-sm text-gray-400 leading-relaxed list-disc">
+              {{ content }}
+            </li>
+          </ul>
         </div>
       </article>
     </div>

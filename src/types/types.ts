@@ -77,7 +77,7 @@ export interface Experiences {
   region: string
   province: string
   type: WorkType
-  description: string
+  description: string[]
 }
 
 // Other Projects Interface

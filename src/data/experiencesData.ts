@@ -2,15 +2,34 @@ import { WorkType, type Experiences } from '@/types/types'
 
 export const myExperience: Experiences[] = [
   {
-    title: 'Software Developer at IC-LSG Codex',
+    title: 'External Vice President at CODEX: Creatives & Computing',
+    location: 'Davao del Norte State College',
+    dateRange: 'Aug 2026 - Present',
+    country: 'Philippines',
+    region: 'Region XI',
+    province: 'Davao del Norte',
+    type: WorkType.hybrid,
+    description: [
+      'Became part of the officers to successfully drive the organization to its official accreditation.',
+      'Supported fellow officers in managing workshops, trainings, and events.',
+      'Aided in management, team composition development, and contributed in authoring the constitution and by-laws.',
+      'Primarily authored the organization’s long-term framework for the organization’s foundation and stability.',
+    ],
+  },
+  {
+    title: 'Software Developer at CODEX: Creatives & Computing',
     location: 'Davao del Norte State College',
     dateRange: 'Sep 2024 - Present',
     country: 'Philippines',
     region: 'Region XI',
     province: 'Davao del Norte',
     type: WorkType.hybrid,
-    description:
-      'Streamline Attendance Tracking using RFID Attendance Management System for over 500 or more students. Spearheaded and currently developing a digitized rental of lockers, aiming on reducing manual renting through a Mobile Application for Locker Rental. Professional collaboration with 4 teams consisting of 5 student developers, for smooth connection of systems using Version Control, comprehensive meetings and collaboration tools. Participated in Hackathons, Ideathons, Workshops, and Trainings.',
+    description: [
+      'Streamline Attendance Tracking using RFID Attendance Management System for over 500 or more students.',
+      'Spearheaded and currently developing a digitized rental of lockers, aiming on reducing manual renting through a Mobile Application for Locker Rental.',
+      'Professional collaboration with 4 teams consisting of 5 student developers, for smooth connection of systems using Version Control, comprehensive meetings and collaboration tools.',
+      'Participated in Hackathons, Ideathons, Workshops, and Trainings.',
+    ],
   },
   {
     title: 'Information Technology Intern',
@@ -20,7 +39,9 @@ export const myExperience: Experiences[] = [
     region: 'Region XI',
     province: 'Davao del Norte',
     type: WorkType.onsite,
-    description:
-      'Supported the IT Department in daily operations by handling interdepartmental inquiries, preparing and processing official documents, and maintaining accurate records of equipment requests and deliveries. Gained experience in office administration and IT support workflows.',
+    description: [
+      'Supported the IT Department in daily operations by handling interdepartmental inquiries, preparing and processing official documents, and maintaining accurate records of equipment requests and deliveries.',
+      'Gained experience in office administration and IT support workflows.',
+    ],
   },
 ]
