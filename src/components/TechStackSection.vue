@@ -22,12 +22,19 @@ const ml = computed(() =>
 </script>
 
 <template>
-  <section class="space-y-10">
-    <!-- Header -->
-    <div>
-      <h2 class="text-3xl md:text-4xl font-bold text-cyan-400">Tech Stack</h2>
-      <p class="text-sm text-gray-500 mt-1">Technologies I use to build apps and systems</p>
-    </div>
+  <section class="space-y-6 px-4 py-4 text-slate-100 md:px-8 md:py-4">
+    <!-- HEADER -->
+    <header class="mb-10">
+      <span class="text-xs font-bold uppercase tracking-[0.16em] text-teal-400"> What I used </span>
+
+      <h2 class="mt-3 text-3xl text-slate-100 font-bold tracking-tight md:text-5xl">
+        Tech Stack<span class="text-teal-400">.</span>
+      </h2>
+
+      <p class="mt-3 text-sm text-slate-400 md:text-base">
+        Technologies I use to build apps and systems.
+      </p>
+    </header>
 
     <!-- Frontend -->
     <div>

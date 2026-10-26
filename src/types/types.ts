@@ -49,6 +49,34 @@ export interface UserProfile {
   email: string
 }
 
+// Education
+export type EducationalLevel =
+  | 'elementary'
+  | 'junior_high_school'
+  | 'senior_high_school'
+  | 'college'
+  | 'postgraduate'
+
+export interface AcademicAchievement {
+  title: string
+  description?: string
+  year?: number
+}
+
+export interface EducationalBackground {
+  schoolName: string
+  educationalLevel: EducationalLevel
+  // Optional because elementary and some high schools
+  // do not necessarily have a degree or program.
+  degreeOrProgram?: string
+  startYear?: number
+  endYear?: number
+  // Indicates whether the student is still studying.
+  isCurrentlyEnrolled?: boolean
+  // A school can have multiple academic achievements.
+  relevantAcademicAchievements?: AcademicAchievement[]
+}
+
 // Coding Project Tech Stack Interface
 export interface TechStacks {
   name: string

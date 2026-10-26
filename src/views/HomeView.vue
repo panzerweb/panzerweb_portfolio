@@ -8,6 +8,7 @@ import ProjectSection from '@/components/ProjectSection.vue'
 import ExperiencesSection from '@/components/ExperiencesSection.vue'
 import AchievementsSection from '@/components/AchievementsSection.vue'
 import OtherProjectsSection from '@/components/OtherProjectsSection.vue'
+import EducationSection from '@/components/EducationSection.vue'
 
 const activeTab = ref('about')
 
@@ -35,26 +36,31 @@ const mainTabs: TabItem[] = [
   },
   {
     id: 1,
+    tabId: 'education',
+    name: 'Education',
+  },
+  {
+    id: 2,
     tabId: 'tech',
     name: 'Tech Stack',
   },
   {
-    id: 2,
+    id: 3,
     tabId: 'coding',
     name: 'Coding Project',
   },
   {
-    id: 3,
+    id: 4,
     tabId: 'experiences',
     name: 'Experiences',
   },
   {
-    id: 4,
+    id: 5,
     tabId: 'non-coding',
     name: 'Other Projects',
   },
   {
-    id: 5,
+    id: 6,
     tabId: 'achievements',
     name: 'Achievements',
   },
@@ -168,6 +174,10 @@ const mainTabs: TabItem[] = [
         <div class="mt-6">
           <div v-if="activeTab === 'about'">
             <AboutSection />
+          </div>
+
+          <div v-if="activeTab === 'education'">
+            <EducationSection />
           </div>
 
           <div v-else-if="activeTab === 'tech'">

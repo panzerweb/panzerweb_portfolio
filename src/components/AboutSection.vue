@@ -3,18 +3,25 @@ import { userProfileData } from '@/data/userProfileData'
 </script>
 
 <template>
-  <section class="space-y-6">
+  <section class="space-y-6 px-4 py-4 text-slate-100 md:px-8 md:py-4">
     <!-- Header -->
-    <div>
-      <h2 class="text-3xl md:text-4xl text-cyan-400 font-bold">About Me</h2>
-      <p class="text-sm text-gray-400 mt-1">Developer • Designer • Student</p>
-    </div>
+    <header class="mb-10">
+      <span class="text-xs font-bold uppercase tracking-[0.16em] text-teal-400">
+        To Tell About Myself
+      </span>
+
+      <h2 class="mt-3 text-3xl text-slate-100 font-bold tracking-tight md:text-5xl">
+        About Me<span class="text-teal-400">.</span>
+      </h2>
+
+      <p class="mt-3 text-sm text-slate-400 md:text-base">Know about myself, and career goals.</p>
+    </header>
 
     <!-- Full Description -->
     <div class="space-y-3">
       <h3 class="text-sm font-semibold text-green-400 uppercase tracking-wide">Background</h3>
 
-      <p class="text-gray-600 leading-relaxed">
+      <p class="text-gray-500 leading-relaxed">
         {{ userProfileData.fullDescription }}
       </p>
     </div>
@@ -23,7 +30,7 @@ import { userProfileData } from '@/data/userProfileData'
     <div class="space-y-3">
       <h3 class="text-sm font-semibold text-green-400 uppercase tracking-wide">Beyond Code</h3>
 
-      <p class="text-gray-600 leading-relaxed">
+      <p class="text-gray-500 leading-relaxed">
         {{ userProfileData.nonTechDescription }}
       </p>
     </div>
@@ -41,7 +48,7 @@ import { userProfileData } from '@/data/userProfileData'
     <!-- Focus Areas -->
     <div>
       <h3 class="text-sm font-semibold text-green-400 uppercase tracking-wide">Focus Areas</h3>
-      <ul class="list-disc ml-5 text-gray-600 text-sm mt-2">
+      <ul class="list-disc ml-5 text-gray-500 text-sm mt-2">
         <li>Frontend Development</li>
         <li>Mobile App Development</li>
         <li>UI/UX Design</li>

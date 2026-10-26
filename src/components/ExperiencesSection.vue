@@ -32,13 +32,17 @@ const getWorkTypeData = (type: WorkType) => {
 </script>
 
 <template>
-  <section class="space-y-8">
-    <!-- Header -->
-    <div>
-      <h2 class="text-3xl md:text-4xl font-bold text-cyan-400">Experience</h2>
+  <section class="space-y-6 px-4 py-4 text-slate-100 md:px-8 md:py-4">
+    <!-- HEADER -->
+    <header class="mb-10">
+      <span class="text-xs font-bold uppercase tracking-[0.16em] text-teal-400"> My Journey </span>
 
-      <p class="text-sm text-gray-500 mt-1">My professional and academic journey.</p>
-    </div>
+      <h2 class="mt-3 text-3xl text-slate-100 font-bold tracking-tight md:text-5xl">
+        Experience<span class="text-teal-400">.</span>
+      </h2>
+
+      <p class="mt-3 text-sm text-slate-400 md:text-base">My professional and academic journey.</p>
+    </header>
 
     <!-- Timeline -->
     <div class="relative border-l border-gray-800 ml-3">

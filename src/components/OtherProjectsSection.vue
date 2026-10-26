@@ -27,13 +27,21 @@ const getCategoryName = (type: OtherProjectType): string => {
 </script>
 
 <template>
-  <section class="space-y-10 font-sans">
-    <div>
-      <h2 class="text-3xl md:text-4xl font-bold text-cyan-400">Other Projects</h2>
-      <p class="text-gray-400 mt-2">
+  <section class="space-y-6 px-4 py-4 text-slate-100 md:px-8 md:py-4">
+    <!-- HEADER -->
+    <header class="mb-10">
+      <span class="text-xs font-bold uppercase tracking-[0.16em] text-teal-400"
+        >Non-Coding Projects</span
+      >
+
+      <h2 class="mt-3 text-3xl text-slate-100 font-bold tracking-tight md:text-5xl">
+        Other Projects<span class="text-teal-400">.</span>
+      </h2>
+
+      <p class="mt-3 text-sm text-slate-400 md:text-base">
         Creative works, short films, and academic productions outside coding.
       </p>
-    </div>
+    </header>
 
     <div class="relative h-128 rounded-2xl overflow-hidden border border-gray-800 shadow-xl">
       <img
