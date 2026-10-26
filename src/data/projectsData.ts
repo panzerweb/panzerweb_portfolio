@@ -4,7 +4,7 @@ import { currentTechStack } from './userProfileData'
 // Import Projects
 import Bale from '@/assets/Projects/Bale.png'
 import RFID from '@/assets/Projects/Attendance.png'
-import LRMS from '@/assets/Projects/Locker.png'
+import LRMS from '@/assets/Projects/DNSC-Locker-Mobile.png'
 import PyTodo from '@/assets/Projects/PyTodo.png'
 import Taskenture from '@/assets/Projects/Taskenture.png'
 import UtangLista from '@/assets/Projects/UtangLista.png'
@@ -52,7 +52,7 @@ export const currentProjects: Projects[] = [
       findTechStack('JavaScript'),
       findTechStack('Vite'),
       findTechStack('TailwindCSS'),
-      findTechStack('MySQL'),
+      findTechStack('SQLite'),
     ],
     githubRepo: '',
     isDeployed: true,
@@ -64,7 +64,7 @@ export const currentProjects: Projects[] = [
     name: 'DNSC Locker Rental Management System',
     coverFile: LRMS,
     description:
-      'A web application for students to seamlessly rent a locker within school grounds. Developed for remote monitoring of available lockers, and current active subscriptions of a student.',
+      'A web and mobile application for students to seamlessly rent a locker within school grounds. Developed for remote monitoring of available lockers, and current active subscriptions of a student.',
     techstack: [
       findTechStack('Flutter'),
       {
@@ -72,7 +72,7 @@ export const currentProjects: Projects[] = [
       },
       findTechStack('Dart'),
       findTechStack('Python'),
-      findTechStack('MySQL'),
+      findTechStack('PostgreSQL'),
     ],
     githubRepo: 'https://github.com/panzerweb/dnsc_locker',
     isDeployed: true,
@@ -116,10 +116,10 @@ export const currentProjects: Projects[] = [
   },
   {
     id: 6,
-    name: 'UtangLista: Retail Store Debt Tracker Management System',
+    name: 'UtangLista: Store Debt Management Mobile Application',
     coverFile: UtangLista,
     description:
-      'A powerful yet straightforward debt tracker system specially built for MSMEs in a local environment setting. This is originally built for a small retail store in the Philippines called Sari-Sari stores.',
+      'Mobile application for managing your stores, transactions, debts. Transforming paper-based transaction to an efficient transaction management.',
     techstack: [
       findTechStack('JavaScript'),
       findTechStack('Php'),
